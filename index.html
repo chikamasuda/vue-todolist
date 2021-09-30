@@ -2,19 +2,20 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Vue App</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-  <div id="app">
+  <div id="app" class="container">
+    <h1>My Todos</h1>
     <ul>
-      <li v-for="todo in todos">{{ todo }}</li>
+      <li v-for="(todo, index) in todos">
+        {{ todo }}
+        <span @click="deleteItem(index)" class="command">[×]</span>
+      </li>
     </ul>
-    <form action="">
-      <input type="text">
+    <form action="" @submit.prevent="addItem">
+      <input type="text" v-model="newItem">
       <input type="submit" value="Add">
     </form>
   </div>
