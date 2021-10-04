@@ -22,8 +22,18 @@ body {
   padding: 2px;
 }
 
-.commnd {
+.command {
   font-size: 12px;
   cursor: pointer;
   color: #08c;
+}
+
+#app ul {
+  padding:0;
+  list-style: none;
+}
+
+#app li > span.done {
+  text-decoration: line-through;
+  color: #bbb;
 }
